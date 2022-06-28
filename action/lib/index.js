@@ -40,7 +40,7 @@ export default async function (inputs) {
       owner: repo.owner,
       repo: repo.repo,
       issue_number: pull_request.number,
-      body: 'All good should merge this pr'
+      body: '/merge'
     })
 
   }
