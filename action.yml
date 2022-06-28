@@ -36,5 +36,5 @@ inputs:
     required: false
 
 runs:
-  using: docker
-  image: docker://ghcr.io/ahmadnassri/action-dependabot-auto-merge:v2
+  using: 'node16'
+  main: '/action/index.js'
