@@ -38,7 +38,7 @@ export default function ({ title, labels = [], config = [], dependencies = {} })
   // exit early
   if (!depName) {
     core.warning('failed to parse title: could not detect dependency name')
-    return process.exit(0) // soft exit
+    // return process.exit(0) // soft exit
   }
 
   // extract version from the title, allowing for constraints (~,^,>=) and v prefix
