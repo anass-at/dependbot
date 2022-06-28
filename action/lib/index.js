@@ -20,7 +20,7 @@ export default async function (inputs) {
   const octokit = new Octokit({
     auth: "token "+inputs.token,
   });
-  console.log('octokit object'  , octokit)
+  console.log('repo '  , repo , 'pull request ' , pull_request.number)
   // parse and determine what command to tell dependabot
   const proceed = parse({
     title: pull_request.title,
