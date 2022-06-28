@@ -6,7 +6,7 @@ import parse from './parse.js'
 import config from './config.js'
 import dependencies from './dependencies.js'
 import { approve, comment } from './api.js'
-import  { Octokit } from("@octokit/rest");
+import  { Octokit } from "@octokit/rest";
 
 
 const workspace = process.env.GITHUB_WORKSPACE || '/github/workspace'
