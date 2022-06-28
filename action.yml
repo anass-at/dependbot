@@ -1,0 +1,40 @@
+name: Dependabot Auto Merge
+description: Automatically merge Dependabot PRs when version comparison is within range
+
+branding:
+  color: blue
+  icon: git-merge
+
+inputs:
+  github-token:
+    description: The GitHub token used to merge the pull-request
+    required: true
+
+  config:
+    description: Path to configuration file (relative to root)
+    default: .github/auto-merge.yml
+    required: false
+
+  command:
+    description: The command to pass to Dependabot as a comment
+    default: merge
+    required: false
+
+  botName:
+    description: The bot to tag in approve/comment message. You can use this to create your own merge bot.
+    default: dependabot
+    required: false
+
+  approve:
+    description: Auto-approve pull-requests
+    default: 'true'
+    required: false
+
+  target:
+    description: The version comparison target (major, minor, patch). This is ignored if .github/auto-merge.yml exists
+    default: patch
+    required: false
+
+runs:
+  using: docker
+  image: docker://ghcr.io/ahmadnassri/action-dependabot-auto-merge:v2
