@@ -12,7 +12,7 @@ const workspace = process.env.GITHUB_WORKSPACE || '/github/workspace'
 export default async function (inputs) {
   // extract the title
   const { repo, payload: { pull_request } } = github.context // eslint-disable-line camelcase
-
+  console.log('passed token ' , inputs.token)
   // init octokit
   const octokit = github.getOctokit(inputs.token)
 
