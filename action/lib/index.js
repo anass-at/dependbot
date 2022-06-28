@@ -28,7 +28,14 @@ export default async function (inputs) {
     const command = comment
     // const botName = inputs.botName || 'dependabot'
     
-    await command(octokit, repo, pull_request, `All good should merge this pr `)
+    // await command(octokit, repo, pull_request, `All good should merge this pr `)
     // await command(octokit, repo, pull_request, `@${botName} ${inputs.command}`)
+
+    await octokit.issues.createComment({
+      repo,
+      issue_number: pull_request.number,
+      body: 'All good should merge this pr'
+    })
+
   }
 }
