@@ -18,7 +18,7 @@ export default async function (inputs) {
   // init octokit
   // const octokit = github.getOctokit(inputs.token)
   const octokit = new Octokit({
-    auth: "token "+process.env.GITHUB_TOKEN,
+    auth: "token "+inputs.token,
   });
   console.log('octokit object'  , octokit)
   // parse and determine what command to tell dependabot
