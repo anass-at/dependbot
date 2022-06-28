@@ -37,8 +37,8 @@ export default async function (inputs) {
     // await command(octokit, repo, pull_request, `@${botName} ${inputs.command}`)
 
     await octokit.issues.createComment({
-      owner: 'SallaApp',
-      repo,
+      owner: repo.owner,
+      repo: repo.repo,
       issue_number: pull_request.number,
       body: 'All good should merge this pr'
     })
