@@ -25,10 +25,10 @@ export default async function (inputs) {
   })
 
   if (proceed) {
-    await command(octokit, repo, pull_request, `All good should merge this pr `)
-    // const command = inputs.approve === 'true' ? approve : comment
+    const command = comment
     // const botName = inputs.botName || 'dependabot'
-
+    
+    await command(octokit, repo, pull_request, `All good should merge this pr `)
     // await command(octokit, repo, pull_request, `@${botName} ${inputs.command}`)
   }
 }
