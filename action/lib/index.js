@@ -6,6 +6,8 @@ import parse from './parse.js'
 import config from './config.js'
 import dependencies from './dependencies.js'
 import { approve, comment } from './api.js'
+const  { Octokit } = require("@octokit/rest");
+
 
 const workspace = process.env.GITHUB_WORKSPACE || '/github/workspace'
 
@@ -14,7 +16,10 @@ export default async function (inputs) {
   const { repo, payload: { pull_request } } = github.context // eslint-disable-line camelcase
   console.log('passed token ' , inputs.token)
   // init octokit
-  const octokit = github.getOctokit(inputs.token)
+  // const octokit = github.getOctokit(inputs.token)
+  const octokit = new Octokit({
+    auth: "token "+process.env.GITHUB_TOKEN,
+  });
   console.log('octokit object'  , octokit)
   // parse and determine what command to tell dependabot
   const proceed = parse({
