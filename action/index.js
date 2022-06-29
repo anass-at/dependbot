@@ -50,5 +50,5 @@ function errorHandler ({ message, stack, request }) {
 // catch errors and exit
 process.on('unhandledRejection', errorHandler)
 process.on('uncaughtException', errorHandler)
-
+console.log('our inputs : ' , JSON.stringify(inputs,null,2)) 
 await main(inputs)
